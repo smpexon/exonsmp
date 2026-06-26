@@ -2,52 +2,46 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Exon SMP | Premium</title>
+    <title>Exon SMP</title>
     <style>
-        body { margin: 0; background: #050505; color: white; font-family: sans-serif; }
+        body { margin: 0; background: #ffffff; color: #333; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
         
-        /* En üstteki banner */
-        .banner-top { width: 100%; height: 350px; background: url('banner.png') center/cover; border-bottom: 5px solid #ea580c; }
+        /* En üstteki banner kalsın */
+        .banner-top { width: 100%; height: 350px; background: url('banner.png') center/cover; }
         
-        /* Kartların olduğu zümrüt desenli alan */
-        .main-area { width: 100%; background: url('arkaplan.png'); padding: 60px 0; display: flex; justify-content: center; }
+        /* Beyaz alan */
+        .white-area { width: 100%; padding: 60px 0; display: flex; justify-content: center; }
         
-        .grid { max-width: 900px; width: 90%; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        .card { background: rgba(0, 0, 0, 0.85); border: 2px solid #333; padding: 25px; border-radius: 20px; text-align: center; }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
+        .grid { max-width: 800px; width: 90%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         
-        .btn { display: block; background: #ea580c; color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .card { padding: 20px; border: 1px solid #eee; border-radius: 15px; text-align: center; background: #f9f9f9; }
+        
+        .btn { display: block; background: #ea580c; color: white; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; }
         .btn-dc { background: #5865F2; }
+        .btn-wp { background: #25D366; }
     </style>
 </head>
 <body>
 
     <div class="banner-top"></div>
 
-    <div class="main-area">
+    <div class="white-area">
         <div class="grid">
-            <!-- IP -->
             <div class="card">
-                <h2 style="color:#ea580c;">SUNUCU IP</h2>
-                <div style="background:#000; padding:25px; border-radius:10px; border:1px solid #ea580c; font-family:monospace; font-size: 1.2rem;">play.exonnetwork.com.tr</div>
+                <h3>SUNUCU IP</h3>
+                <p style="font-weight:bold; font-size:1.2rem;">play.exonnetwork.com.tr</p>
             </div>
-            
-            <!-- Mağaza -->
             <div class="card">
-                <img src="logo2.png">
-                <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA PANELİ</a>
+                <h3>MAĞAZA</h3>
+                <a href="https://www.shopier.com/WienCraft" class="btn">GİT</a>
             </div>
-            
-            <!-- Whatsapp -->
             <div class="card">
-                <img src="logo3.png">
-                <a href="https://wa.me/639552110999" class="btn" style="background:#25D366;">WHATSAPP İLETİŞİM</a>
+                <h3>WHATSAPP</h3>
+                <a href="https://wa.me/639552110999" class="btn btn-wp">İLETİŞİM</a>
             </div>
-            
-            <!-- Discord -->
             <div class="card">
-                <img src="discordresmi.png">
-                <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD TOPLULUĞU</a>
+                <h3>DISCORD</h3>
+                <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">KATIL</a>
             </div>
         </div>
     </div>
