@@ -3,59 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exon SMP | Premium Minecraft Deneyimi</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Exon SMP | Premium Survival</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;900&display=swap');
-        body { 
-            font-family: 'Outfit', sans-serif; 
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://wallpaperaccess.com/full/2212456.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        /* Tasarım Stilleri */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #050505; color: white; line-height: 1.6; }
+        
+        /* Arka Plan */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://wallpaperaccess.com/full/2212456.jpg');
+            background-size: cover; background-position: center; min-height: 100vh;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
         }
-        .glow { filter: drop-shadow(0 0 25px rgba(249, 115, 22, 0.7)); }
+
+        .logo { width: 250px; margin-bottom: 20px; filter: drop-shadow(0 0 15px rgba(255, 165, 0, 0.5)); }
+        
+        /* IP Kutusu */
+        .ip-box { 
+            background: #ea580c; padding: 20px 40px; border-radius: 15px; 
+            font-size: 28px; font-weight: bold; margin: 30px 0; cursor: pointer;
+            transition: 0.3s; border: 2px solid #fff;
+        }
+        .ip-box:hover { transform: scale(1.05); background: #c2410c; }
+
+        /* Butonlar */
+        .buttons { display: flex; gap: 20px; margin-bottom: 50px; }
+        .btn { padding: 15px 25px; border-radius: 10px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+        .btn:hover { opacity: 0.8; transform: translateY(-5px); }
+        .btn img { width: 25px; }
+
+        /* Biz Kimiz */
+        .about { max-width: 800px; margin: 50px auto; padding: 20px; text-align: center; }
+        footer { padding: 30px; text-align: center; color: #555; border-top: 1px solid #222; }
     </style>
 </head>
-<body class="text-white min-h-screen flex flex-col items-center justify-center p-5">
+<body>
 
-    <!-- Logo ve Başlık -->
-    <header class="flex flex-col items-center text-center mb-16">
-        <img src="https://cdn.discordapp.com/attachments/1460981030663098523/1462777449162211434/1X1.png" class="w-64 glow animate-pulse mb-8" alt="Exon SMP">
-        <h1 class="text-7xl font-black uppercase tracking-tighter">EXON <span class="text-orange-500">SMP</span></h1>
-        <p class="text-gray-400 mt-2 text-lg">2025'ten bu yana premium survival deneyimi.</p>
-    </header>
+    <div class="hero">
+        <img src="https://cdn.discordapp.com/attachments/1460981030663098523/1462777449162211434/1X1.png" class="logo" alt="Exon SMP">
+        <h1>EXON SMP</h1>
+        <p>2025'ten bu yana premium survival deneyimi.</p>
+        
+        <div class="ip-box" onclick="copyIP()">play.exonnetwork.com.tr</div>
+        <p id="msg" style="color: #ea580c; font-weight: bold;">Kopyalamak için tıkla!</p>
+    </div>
 
-    <!-- IP Kopyalama -->
-    <button onclick="copyIP()" class="bg-gradient-to-r from-orange-600 to-red-600 px-10 py-5 rounded-2xl font-black text-2xl tracking-widest shadow-[0_0_50px_rgba(234,88,12,0.4)] hover:scale-105 transition-all">
-        play.exonnetwork.com.tr
-    </button>
-    <p id="copyText" class="text-orange-500 mt-4 opacity-0 transition-opacity font-bold">IP PANODAYIM!</p>
+    <div class="buttons" style="justify-content: center;">
+        <a href="https://www.shopier.com/WienCraft" class="btn" style="background: white; color: black;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Shopier_Logo.png"> MAĞAZA
+        </a>
+        <a href="https://discord.gg/wRr95fuwmf" class="btn" style="background: #5865F2;">
+            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" style="filter: invert(1);"> DISCORD
+        </a>
+        <a href="https://wa.me/639552110999" class="btn" style="background: #25D366;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style="filter: invert(1);"> WHATSAPP
+        </a>
+    </div>
 
-    <!-- Aksiyon Butonları -->
-    <section class="mt-16 flex flex-wrap justify-center gap-6">
-        <a href="https://www.shopier.com/WienCraft" target="_blank" class="flex items-center gap-3 bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-orange-500 hover:text-white transition-all">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Shopier_Logo.png" class="w-6"> MAĞAZA
-        </a>
-        <a href="https://discord.gg/wRr95fuwmf" target="_blank" class="flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-indigo-500 transition-all">
-            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" class="w-6 invert"> DISCORD
-        </a>
-        <a href="https://wa.me/639552110999" target="_blank" class="flex items-center gap-3 bg-green-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-green-500 transition-all">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-6 invert"> WHATSAPP
-        </a>
+    <section class="about">
+        <h2>BİZ KİMİZ?</h2>
+        <p>Exon SMP, 2025 yılından beri oyuncularına en kaliteli hayatta kalma deneyimini sunan, hilesiz ve rekabet dolu bir Minecraft sunucusudur. Güçlü altyapımız ve ilgili yönetim kadromuzla yanınızdayız.</p>
     </section>
 
-    <!-- Footer -->
-    <footer class="mt-24 text-gray-500 text-sm">
-        <p>© 2026 Exon SMP - Tüm Hakları Saklıdır.</p>
-    </footer>
+    <footer>© 2026 Exon SMP - Tüm Hakları Saklıdır.</footer>
 
     <script>
         function copyIP() {
             navigator.clipboard.writeText("play.exonnetwork.com.tr");
-            const text = document.getElementById("copyText");
-            text.style.opacity = "1";
-            setTimeout(() => { text.style.opacity = "0"; }, 2000);
+            document.getElementById("msg").innerText = "IP BAŞARIYLA KOPYALANDI!";
+            setTimeout(() => { document.getElementById("msg").innerText = "Kopyalamak için tıkla!"; }, 2000);
         }
     </script>
 </body>
