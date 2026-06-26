@@ -2,67 +2,59 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exon SMP | Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background: #080808; color: white; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-        
-        /* Arka Plan: Koyu ve kaliteli bir doku */
-        .hero { 
-            width: 100%; padding: 80px 20px; text-align: center; 
-            background: linear-gradient(180deg, #111 0%, #080808 100%);
-            border-bottom: 2px solid #ea580c;
-        }
-
-        h1 { font-size: 4rem; margin-bottom: 10px; color: #ea580c; text-transform: uppercase; letter-spacing: 2px; }
-        
-        /* IP Kutusu */
-        .ip-box { 
-            background: #1a1a1a; padding: 25px 50px; border-radius: 15px; 
-            font-size: 28px; font-weight: bold; margin: 30px 0; cursor: pointer; 
-            border: 2px solid #ea580c; display: inline-block; transition: 0.3s;
-        }
-        .ip-box:hover { background: #222; transform: scale(1.02); }
-
-        /* Butonlar */
-        .buttons { display: flex; gap: 15px; margin-top: 20px; }
-        .btn { padding: 15px 25px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; transition: 0.3s; }
-        .shop { background: #fff; color: #000; }
-        .dc { background: #5865F2; }
-        .wa { background: #25D366; }
-        .btn:hover { opacity: 0.8; transform: translateY(-3px); }
-
-        .about { max-width: 600px; padding: 50px 20px; text-align: center; color: #aaa; }
+        body { background: #050505; color: white; font-family: sans-serif; }
+        .card { background: #111; border: 1px solid #222; border-radius: 20px; overflow: hidden; transition: 0.3s; }
+        .card:hover { border-color: #ea580c; }
     </style>
 </head>
-<body>
+<body class="p-5 md:p-10">
 
-    <div class="hero">
-        <h1>EXON SMP</h1>
-        <p style="font-size: 1.2rem;">2025'ten bu yana premium survival deneyimi.</p>
+    <!-- Header -->
+    <div class="text-center mb-10">
+        <img src="https://cdn.discordapp.com/attachments/1460981030663098523/1462777449162211434/1X1.png" class="w-32 mx-auto mb-4">
+        <h1 class="text-4xl font-black italic">EXON SMP</h1>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div class="ip-box" onclick="copyIP()">play.exonnetwork.com.tr</div>
-        <p id="msg" style="color: #ea580c;">Kopyalamak için tıkla!</p>
-    </div>
+        <!-- Sol Panel -->
+        <div class="card p-6 flex flex-col items-center justify-center text-center">
+            <img src="https://cdn.discordapp.com/attachments/1460981030663098523/1462777449162211434/1X1.png" class="w-40 mb-6">
+            <button onclick="copyIP()" class="bg-gray-800 w-full py-3 rounded-xl font-bold hover:bg-orange-600">play.exonnetwork.com.tr</button>
+        </div>
 
-    <div class="buttons">
-        <a href="https://www.shopier.com/WienCraft" class="btn shop">MAĞAZA</a>
-        <a href="https://discord.gg/wRr95fuwmf" class="btn dc">DISCORD</a>
-        <a href="https://wa.me/639552110999" class="btn wa">WHATSAPP</a>
-    </div>
+        <!-- Orta Panel (Görseller) -->
+        <div class="md:col-span-2 grid grid-rows-2 gap-6">
+            <div class="card h-48 bg-cover bg-center flex items-end p-4" style="background-image: url('https://wallpaperaccess.com/full/2212456.jpg');">
+                <span class="bg-black/60 px-3 py-1 rounded-lg font-bold">MAĞAZA</span>
+            </div>
+            <div class="card h-48 bg-cover bg-center flex items-end p-4" style="background-image: url('https://images.alphacoders.com/955/955146.jpg');">
+                <span class="bg-black/60 px-3 py-1 rounded-lg font-bold">İSTATİSTİKLER</span>
+            </div>
+        </div>
 
-    <div class="about">
-        <h2 style="color: white; margin-bottom: 20px;">BİZ KİMİZ?</h2>
-        <p>Exon SMP, 2025 yılından bu yana oyuncularına en kaliteli hayatta kalma deneyimini sunan, hilesiz ve rekabet dolu bir Minecraft sunucusudur. Güçlü altyapımız ve profesyonel yönetimimizle her zaman yanınızdayız.</p>
+        <!-- Sağ Paneller -->
+        <div class="card p-6 text-center">
+            <h2 class="text-2xl font-bold mb-2">DISCORD</h2>
+            <p class="text-gray-400">Topluluğumuza katıl!</p>
+        </div>
+
+        <div class="md:col-span-2 card p-6">
+            <h2 class="font-bold mb-2">NASIL KATILIRIM?</h2>
+            <div class="bg-black p-4 rounded-xl border border-gray-800 text-sm font-mono">
+                IP: play.exonnetwork.com.tr
+            </div>
+        </div>
     </div>
 
     <script>
         function copyIP() {
             navigator.clipboard.writeText("play.exonnetwork.com.tr");
-            const m = document.getElementById("msg");
-            m.innerText = "IP BAŞARIYLA KOPYALANDI!";
-            setTimeout(() => { m.innerText = "Kopyalamak için tıkla!"; }, 2000);
+            alert("IP Kopyalandı!");
         }
     </script>
 </body>
