@@ -6,71 +6,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { 
-            margin: 0; background-color: #050505; color: white; 
-            font-family: 'Montserrat', sans-serif; display: flex; flex-direction: column; align-items: center; 
+            margin: 0; 
+            /* Zümrüt desenini tüm arka plana yayıyoruz */
+            background: url('arkaplan.png'); 
+            background-repeat: repeat; 
+            color: white; 
+            font-family: 'Montserrat', sans-serif; 
+            display: flex; flex-direction: column; align-items: center; padding-bottom: 50px;
         }
-        /* Full Bannerlar */
-        .banner-top { width: 100%; height: 400px; background: url('banner.png') center/cover; border-bottom: 5px solid #ea580c; }
-        .banner-bottom { width: 100%; height: 250px; background: url('banner2.png') center/cover; border-top: 5px solid #ea580c; margin-top: 50px; }
         
-        /* Logo ve Başlık */
-        .main-logo { width: 180px; height: 180px; border-radius: 25px; border: 4px solid #ea580c; margin-top: -90px; box-shadow: 0 0 30px rgba(234, 88, 12, 0.4); background: #000; }
+        .banner-top { width: 100%; height: 350px; background: url('banner.png') center/cover; border-bottom: 5px solid #ea580c; }
         
-        .grid-container { max-width: 1000px; width: 90%; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-        .card { background: #111; border: 1px solid #333; padding: 25px; border-radius: 25px; text-align: center; transition: 0.3s; }
-        .card:hover { border-color: #ea580c; transform: translateY(-5px); }
+        .main-logo { width: 150px; height: 150px; border-radius: 20px; border: 4px solid #ea580c; margin-top: -75px; box-shadow: 0 0 20px rgba(0,0,0,0.5); background: #000; }
         
-        .card-img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
-        .btn { display: block; background: #ea580c; color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        /* Kartların arkasını hafif şeffaf yaparak desenin görünmesini sağlıyoruz */
+        .grid-container { max-width: 900px; width: 90%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .card { background: rgba(0, 0, 0, 0.8); border: 2px solid #333; padding: 20px; border-radius: 20px; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: #ea580c; background: rgba(0, 0, 0, 0.7); }
+        
+        .card-img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; margin-bottom: 10px; }
+        .btn { display: block; background: #ea580c; color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         .btn-dc { background: #5865F2; }
         .btn-wp { background: #25D366; }
     </style>
 </head>
 <body>
 
-    <!-- Full Üst Banner -->
     <div class="banner-top"></div>
     
     <div style="text-align: center;">
-        <img src="logo.png" class="main-logo" alt="Exon Logo">
-        <h1 style="font-size: 3rem; margin-top: 20px;">EXON SMP</h1>
+        <img src="logo.png" class="main-logo">
+        <h1 style="margin-top: 15px; text-shadow: 2px 2px 4px #000;">EXON SMP</h1>
     </div>
 
     <div class="grid-container">
-        <!-- Sunucu IP -->
         <div class="card">
             <h2 style="color:#ea580c;">SUNUCU IP</h2>
-            <div onclick="copyIP()" style="background:#000; padding:25px; border-radius:12px; font-family:monospace; margin:20px 0; border:1px solid #ea580c; cursor: pointer; font-size: 1.2rem;">play.exonnetwork.com.tr</div>
-            <p id="msg" style="font-size: 13px; opacity: 0.6;">Kopyalamak için üzerine tıkla</p>
+            <div onclick="copyIP()" style="background:#000; padding:20px; border-radius:10px; font-family:monospace; margin:10px 0; border:1px solid #ea580c; cursor: pointer;">play.exonnetwork.com.tr</div>
+            <p id="msg" style="font-size: 12px; opacity: 0.8;">Kopyalamak için tıkla</p>
         </div>
 
-        <!-- Mağaza -->
         <div class="card">
             <img src="logo2.png" class="card-img">
             <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA PANELİ</a>
         </div>
 
-        <!-- İletişim -->
         <div class="card">
             <img src="logo3.png" class="card-img">
             <a href="https://wa.me/639552110999" class="btn btn-wp">WHATSAPP İLETİŞİM</a>
         </div>
 
-        <!-- Discord -->
         <div class="card">
             <img src="logo.png" class="card-img">
             <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD TOPLULUĞU</a>
         </div>
     </div>
 
-    <!-- Full Alt Banner -->
-    <div class="banner-bottom"></div>
-
     <script>
         function copyIP() {
             navigator.clipboard.writeText("play.exonnetwork.com.tr");
-            document.getElementById("msg").innerText = "IP BAŞARIYLA KOPYALANDI!";
-            setTimeout(() => { document.getElementById("msg").innerText = "Kopyalamak için üzerine tıkla"; }, 2000);
+            document.getElementById("msg").innerText = "KOPYALANDI!";
+            setTimeout(() => { document.getElementById("msg").innerText = "Kopyalamak için tıkla"; }, 2000);
         }
     </script>
 </body>
