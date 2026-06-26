@@ -6,28 +6,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { 
-            margin: 0; 
-            background-color: #050505;
-            color: white; 
-            font-family: 'Montserrat', sans-serif; 
-            display: flex; flex-direction: column; align-items: center; padding-bottom: 50px;
+            margin: 0; background-color: #050505; color: white; 
+            font-family: 'Montserrat', sans-serif; display: flex; flex-direction: column; align-items: center; padding-bottom: 50px;
         }
-        /* Banner Alanı */
-        .banner { width: 100%; height: 350px; background: url('banner.png') center/cover; border-bottom: 5px solid #ea580c; margin-bottom: 30px; }
+        /* Bannerlar */
+        .banner { width: 100%; height: 300px; background: url('banner.png') center/cover; border-bottom: 4px solid #ea580c; }
+        .banner-bottom { width: 100%; height: 200px; background: url('banner2.png') center/cover; border-top: 4px solid #ea580c; margin-top: 40px; }
         
-        .main-logo { width: 160px; height: 160px; border-radius: 25px; border: 4px solid #ea580c; margin-top: -80px; box-shadow: 0 0 30px rgba(234, 88, 12, 0.4); background: #000; }
+        .main-logo { width: 150px; height: 150px; border-radius: 20px; border: 3px solid #ea580c; margin-top: -75px; box-shadow: 0 0 20px rgba(234, 88, 12, 0.3); background: #000; }
         
-        .grid-container { max-width: 950px; width: 90%; display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px; }
+        .grid-container { max-width: 900px; width: 90%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .card { background: #111; border: 1px solid #333; padding: 20px; border-radius: 20px; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: #ea580c; }
         
-        .card { background: #111; border: 1px solid #333; padding: 25px; border-radius: 25px; text-align: center; transition: 0.4s; }
-        .card:hover { border-color: #ea580c; transform: translateY(-8px); }
-        .card-img { width: 100%; height: 170px; object-fit: cover; border-radius: 15px; margin-bottom: 15px; }
-        
-        .btn { display: block; background: #ea580c; color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; letter-spacing: 1px; transition: 0.3s; }
+        .card-img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; margin-bottom: 10px; }
+        .btn { display: block; background: #ea580c; color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         .btn-dc { background: #5865F2; }
         .btn-wp { background: #25D366; }
-        
-        h1 { font-size: 3rem; font-weight: 900; margin: 15px 0; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -37,37 +32,38 @@
     <div style="text-align: center;">
         <img src="logo.png" class="main-logo" alt="Exon Logo">
         <h1>EXON SMP</h1>
-        <p style="opacity: 0.7; letter-spacing: 2px;">PREMIUM SURVIVAL DENEYİMİ</p>
     </div>
 
     <div class="grid-container">
         <div class="card">
             <h2 style="color:#ea580c;">SUNUCU IP</h2>
-            <div onclick="copyIP()" style="background:#000; padding:25px; border-radius:12px; font-family:monospace; margin:20px 0; border:1px solid #ea580c; cursor: pointer; font-size: 1.3rem;">play.exonnetwork.com.tr</div>
-            <p id="msg" style="font-size: 13px; opacity: 0.6;">Kopyalamak için üzerine tıkla</p>
+            <div onclick="copyIP()" style="background:#000; padding:20px; border-radius:10px; font-family:monospace; margin:10px 0; border:1px dashed #ea580c; cursor: pointer;">play.exonnetwork.com.tr</div>
+            <p id="msg" style="font-size: 12px; opacity: 0.6;">Kopyalamak için tıkla</p>
         </div>
 
         <div class="card">
-            <img src="logo2.png" class="card-img" alt="Store">
+            <img src="logo2.png" class="card-img">
             <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA PANELİ</a>
         </div>
 
         <div class="card">
-            <img src="logo3.png" class="card-img" alt="Contact">
+            <img src="logo3.png" class="card-img">
             <a href="https://wa.me/639552110999" class="btn btn-wp">WHATSAPP İLETİŞİM</a>
         </div>
 
         <div class="card">
-            <img src="logo.png" class="card-img" alt="Discord">
+            <img src="logo.png" class="card-img">
             <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD TOPLULUĞU</a>
         </div>
     </div>
 
+    <div class="banner-bottom"></div>
+
     <script>
         function copyIP() {
             navigator.clipboard.writeText("play.exonnetwork.com.tr");
-            document.getElementById("msg").innerText = "IP BAŞARIYLA KOPYALANDI!";
-            setTimeout(() => { document.getElementById("msg").innerText = "Kopyalamak için üzerine tıkla"; }, 2000);
+            document.getElementById("msg").innerText = "KOPYALANDI!";
+            setTimeout(() => { document.getElementById("msg").innerText = "Kopyalamak için tıkla"; }, 2000);
         }
     </script>
 </body>
