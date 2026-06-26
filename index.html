@@ -7,21 +7,19 @@
         body { margin: 0; background: #ffffff; color: #333; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
         .banner-top { width: 100%; height: 350px; background: url('banner.png') center/cover; border-bottom: 2px solid #ea580c; }
         
-        .content { max-width: 900px; width: 90%; padding: 60px 0; }
+        .content { max-width: 800px; width: 90%; padding: 60px 0; }
         
         /* IP Bölümü */
-        .ip-card { background: #f9f9f9; padding: 40px; border-radius: 20px; border: 2px dashed #ea580c; text-align: center; margin-bottom: 50px; }
-        .ip-text { font-family: monospace; font-size: 2rem; color: #ea580c; font-weight: bold; margin: 10px 0; }
+        .ip-card { background: #f9f9f9; padding: 30px; border-radius: 20px; border: 2px dashed #ea580c; text-align: center; margin-bottom: 40px; cursor: pointer; transition: 0.3s; }
+        .ip-card:hover { background: #f0f0f0; }
+        .ip-text { font-family: monospace; font-size: 1.8rem; color: #ea580c; font-weight: bold; }
         
-        /* Kart Grid */
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .card { padding: 20px; border: 1px solid #eee; border-radius: 20px; text-align: center; background: #fafafa; }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
+        /* 3'lü Grid yapısı */
+        .grid-top { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .grid-bottom { display: flex; justify-content: center; }
+        .card { padding: 20px; border: 1px solid #eee; border-radius: 20px; text-align: center; background: #fafafa; flex: 1; max-width: 400px; }
+        .card img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; margin-bottom: 10px; }
         
-        /* Çizgili Ayrıcılar */
-        .divider { width: 100%; height: 2px; background: #eee; margin: 40px 0; }
-        
-        .info-section { text-align: center; }
         .btn { display: block; background: #ea580c; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         .btn-dc { background: #5865F2; }
         .btn-wp { background: #25D366; }
@@ -32,17 +30,15 @@
     <div class="banner-top"></div>
 
     <div class="content">
-        <!-- Vurgulu IP Bölümü -->
-        <div class="ip-card">
-            <h3>SUNUCUYA BAĞLANMAK İÇİN</h3>
+        <!-- Tıklayınca Kopyalama özelliği eklendi -->
+        <div class="ip-card" onclick="copyIP()" id="ipBox">
+            <h3>SUNUCU IP (Tıkla ve Kopyala)</h3>
             <div class="ip-text">play.exonnetwork.com.tr</div>
-            <p style="font-size: 0.9rem; opacity: 0.7;">Kopyalamak için üzerine tıklayabilirsiniz</p>
+            <p id="msg" style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">Kopyalamak için üzerine tıkla</p>
         </div>
 
-        <div class="divider"></div>
-
-        <!-- Kartlar -->
-        <div class="grid">
+        <!-- Üstteki 2 kart -->
+        <div class="grid-top">
             <div class="card">
                 <img src="logo2.png">
                 <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA PANELİ</a>
@@ -51,28 +47,25 @@
                 <img src="logo3.png">
                 <a href="https://wa.me/639552110999" class="btn btn-wp">WHATSAPP İLETİŞİM</a>
             </div>
+        </div>
+
+        <!-- Alttaki 1 kart (Ortada) -->
+        <div class="grid-bottom">
             <div class="card">
                 <img src="discordresmi.png">
                 <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD TOPLULUĞU</a>
             </div>
-            <div class="card">
-                <img src="logo.png">
-                <p>EXON SMP<br>Kendi hikayeni yaz!</p>
-            </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <!-- Exon Bilgi -->
-        <div class="info-section">
-            <h2 style="color:#ea580c;">EXON SMP HAKKINDA</h2>
-            <p style="line-height: 1.8; color: #555;">
-                Exon SMP, oyuncularına kesintisiz ve premium bir survival deneyimi sunmayı hedefler. 
-                Gelişmiş teknik altyapımız, özgün oyun modlarımız ve sıcak topluluğumuz ile 
-                Minecraft deneyimini bambaşka bir boyuta taşıyoruz.
-            </p>
         </div>
     </div>
 
+    <script>
+        function copyIP() {
+            navigator.clipboard.writeText("play.exonnetwork.com.tr");
+            const msg = document.getElementById("msg");
+            msg.innerText = "IP BAŞARIYLA KOPYALANDI!";
+            msg.style.color = "#ea580c";
+            setTimeout(() => { msg.innerText = "Kopyalamak için üzerine tıkla"; msg.style.color = "#333"; }, 2000);
+        }
+    </script>
 </body>
 </html>
