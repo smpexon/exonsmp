@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>Exon SMP | Premium</title>
     <style>
-        body { margin: 0; background: #ffffff; color: #333; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
+        body { margin: 0; background: #f0f0f0; color: #333; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
         .banner-top { width: 100%; height: 350px; background: url('banner.png') center/cover; border-bottom: 2px solid #ea580c; }
         
         .content { max-width: 800px; width: 90%; padding: 60px 0; }
         
         /* IP Bölümü */
-        .ip-card { background: #f9f9f9; padding: 30px; border-radius: 20px; border: 2px dashed #ea580c; text-align: center; margin-bottom: 40px; cursor: pointer; transition: 0.3s; }
-        .ip-card:hover { background: #f0f0f0; }
+        .ip-card { background: #e0e0e0; padding: 30px; border-radius: 20px; border: 2px dashed #ea580c; text-align: center; margin-bottom: 40px; cursor: pointer; transition: 0.3s; }
+        .ip-card:hover { background: #d5d5d5; }
         .ip-text { font-family: monospace; font-size: 1.8rem; color: #ea580c; font-weight: bold; }
         
         /* 3'lü Grid yapısı */
         .grid-top { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
         .grid-bottom { display: flex; justify-content: center; }
-        .card { padding: 20px; border: 1px solid #eee; border-radius: 20px; text-align: center; background: #fafafa; flex: 1; max-width: 400px; }
+        .card { padding: 20px; border: 1px solid #ccc; border-radius: 20px; text-align: center; background: #e8e8e8; flex: 1; max-width: 400px; }
         .card img { width: 100%; height: 140px; object-fit: cover; border-radius: 12px; margin-bottom: 10px; }
         
         .btn { display: block; background: #ea580c; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
@@ -30,14 +30,12 @@
     <div class="banner-top"></div>
 
     <div class="content">
-        <!-- Tıklayınca Kopyalama özelliği eklendi -->
         <div class="ip-card" onclick="copyIP()" id="ipBox">
             <h3>SUNUCU IP (Tıkla ve Kopyala)</h3>
             <div class="ip-text">play.exonnetwork.com.tr</div>
             <p id="msg" style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">Kopyalamak için üzerine tıkla</p>
         </div>
 
-        <!-- Üstteki 2 kart -->
         <div class="grid-top">
             <div class="card">
                 <img src="logo2.png">
@@ -49,7 +47,6 @@
             </div>
         </div>
 
-        <!-- Alttaki 1 kart (Ortada) -->
         <div class="grid-bottom">
             <div class="card">
                 <img src="discordresmi.png">
