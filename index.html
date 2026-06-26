@@ -2,52 +2,53 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exon SMP | Premium</title>
     <style>
-        :root { --primary: #ea580c; --bg: #050505; --card: #111; }
-        body { margin: 0; background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        body { margin: 0; background: #050505; color: white; font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; padding: 20px; }
         
-        /* Hero */
-        .hero { width: 100%; padding: 80px 20px; text-align: center; background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://wallpaperaccess.com/full/2212456.jpg'); background-size: cover; border-bottom: 4px solid var(--primary); }
-        .logo { width: 180px; height: 180px; margin-bottom: 20px; border-radius: 20px; border: 2px solid #333; }
+        /* Logo Alanı */
+        .header { text-align: center; margin-bottom: 30px; }
+        .main-logo { width: 150px; height: 150px; border-radius: 20px; border: 2px solid #333; }
         
-        /* Grid */
-        .container { max-width: 900px; width: 90%; margin-top: 40px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .card { background: var(--card); border: 1px solid #333; padding: 30px; border-radius: 20px; text-align: center; transition: 0.3s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .full { grid-column: span 2; }
+        /* Grid Yapısı */
+        .grid-container { max-width: 900px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: #111; border: 1px solid #333; padding: 20px; border-radius: 20px; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: #ea580c; }
         
-        /* İpuçları */
-        .ip-box { background: #000; padding: 20px; border-radius: 10px; font-family: monospace; font-size: 20px; color: var(--primary); border: 1px dashed var(--primary); cursor: pointer; margin-top: 10px; }
-        .btn { display: block; background: var(--primary); color: white; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 20px; }
-        h2 { margin-top: 0; color: var(--primary); }
+        /* Resim Alanları */
+        .card-img { width: 100%; height: 150px; object-fit: cover; border-radius: 15px; margin-bottom: 10px; }
+        
+        .btn { display: block; background: #ea580c; color: white; padding: 12px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .btn-dc { background: #5865F2; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <img src="logo.png" class="logo" alt="Exon SMP">
-        <h1 style="font-size: 3rem; margin: 0;">EXON SMP</h1>
+    <div class="header">
+        <img src="logo.png" class="main-logo">
+        <h1 style="margin: 10px 0;">EXON SMP</h1>
     </div>
 
-    <div class="container">
+    <div class="grid-container">
         <div class="card">
             <h2>Sunucu IP</h2>
-            <div class="ip-box" onclick="copyIP()">play.exonnetwork.com.tr</div>
-            <p id="msg" style="font-size: 12px; margin-top: 10px;">Tıklayarak kopyala</p>
+            <div style="background:#000; padding:15px; border-radius:10px; font-family:monospace; margin:10px 0; color:#ea580c; border:1px dashed #ea580c;">play.exonnetwork.com.tr</div>
+            <p id="msg" style="font-size: 12px;">Kopyalamak için tıkla</p>
         </div>
-        
+
         <div class="card">
-            <h2>Mağaza</h2>
-            <p>Premium üyelikler için tıkla.</p>
+            <img src="logo2.png" class="card-img">
             <a href="https://www.shopier.com/WienCraft" class="btn">Mağazaya Git</a>
         </div>
 
-        <div class="card full">
-            <h2>Discord</h2>
-            <p>Topluluğumuza katıl ve arkadaşlarınla oyna!</p>
-            <a href="https://discord.gg/wRr95fuwmf" class="btn" style="background: #5865F2;">Discord'a Katıl</a>
+        <div class="card">
+            <img src="logo3.png" class="card-img">
+            <p>Sunucu İstatistikleri</p>
+        </div>
+
+        <div class="card">
+            <img src="logo4.png" class="card-img">
+            <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">Discord'a Katıl</a>
         </div>
     </div>
 
@@ -55,7 +56,7 @@
         function copyIP() {
             navigator.clipboard.writeText("play.exonnetwork.com.tr");
             document.getElementById("msg").innerText = "KOPYALANDI!";
-            setTimeout(() => { document.getElementById("msg").innerText = "Tıklayarak kopyala"; }, 2000);
+            setTimeout(() => { document.getElementById("msg").innerText = "Kopyalamak için tıkla"; }, 2000);
         }
     </script>
 </body>
