@@ -3,51 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exon SMP | Premium Minecraft Deneyimi</title>
+    <title>Exon SMP | Premium Deneyim</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .glow { filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.6)); }
-        .card-bg { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); }
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;900&display=swap');
+        body { font-family: 'Outfit', sans-serif; background: #050505; }
+        .glow { filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.5)); }
     </style>
 </head>
-<body class="bg-black text-white font-sans min-h-screen flex flex-col items-center p-5">
+<body class="text-white">
 
-    <header class="flex flex-col items-center mt-10 mb-16">
-        <img src="BURAYA_IMGUR_LINKINI_YAPISTIR" alt="Exon SMP Logo" class="w-64 h-64 object-contain glow mb-6">
-        <h1 class="text-6xl font-black uppercase italic tracking-tighter">EXON <span class="text-orange-500">SMP</span></h1>
+    <header class="h-screen flex flex-col items-center justify-center text-center px-5">
+        <img src="BURAYA_IMGUR_LINKINI_YAPISTIR" class="w-64 glow animate-bounce mb-8">
+        <h1 class="text-7xl font-black uppercase tracking-tighter">EXON <span class="text-orange-500">SMP</span></h1>
+        <p class="text-xl text-gray-400 mt-4 max-w-xl">2025'ten bu yana kesintisiz, hilesiz ve rekabet dolu survival deneyimi.</p>
+        
+        <button onclick="copyIP()" class="mt-8 bg-orange-600 hover:bg-orange-500 px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105">
+            IP: play.exonnetwork.com.tr (Tıkla Kopyala)
+        </button>
+        <p id="copyText" class="text-orange-500 mt-2 opacity-0 transition-opacity">IP panoya kopyalandı!</p>
     </header>
 
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full mb-16">
-        <div class="card-bg p-6 rounded-2xl border border-orange-500/20 hover:border-orange-500 transition-all text-center">
-            <h3 class="text-xl font-bold mb-2">7/24 Kesintisiz</h3>
-            <p class="text-gray-400 text-sm">Gelişmiş donanımlar ile lag sorunu olmadan oyun keyfi.</p>
+    <section class="max-w-4xl mx-auto py-20 px-5 text-center">
+        <h2 class="text-4xl font-black mb-10">BİZ KİMİZ?</h2>
+        <p class="text-gray-300 leading-relaxed text-lg">
+            Exon SMP, 2025 yılından bu yana oyuncularına ev sahipliği yapan, tamamen topluluk odaklı bir hayatta kalma sunucusudur. 
+            Amacımız, eski Minecraft survival ruhunu günümüz teknolojisiyle birleştirerek sizlere eşsiz bir oyun ortamı sunmaktır. 
+            Güçlü altyapımız, ilgili yönetim kadromuz ve seçkin oyuncu kitlemiz ile her geçen gün büyümeye devam ediyoruz.
+        </p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto px-5 mb-20">
+        <div class="bg-gray-900 p-8 rounded-2xl border border-orange-900 hover:border-orange-500 transition-all">
+            <h3 class="text-xl font-bold mb-3">Hilesiz Oyun</h3>
+            <p class="text-gray-400 text-sm">Gelişmiş anticheat sistemimizle adil rekabet.</p>
         </div>
-        <div class="card-bg p-6 rounded-2xl border border-orange-500/20 hover:border-orange-500 transition-all text-center">
-            <h3 class="text-xl font-bold mb-2">Özel Ekonomi</h3>
-            <p class="text-gray-400 text-sm">Dengelenmiş market sistemi ile tam bir ticaret tecrübesi.</p>
+        <div class="bg-gray-900 p-8 rounded-2xl border border-orange-900 hover:border-orange-500 transition-all">
+            <h3 class="text-xl font-bold mb-3">Aktif Yönetim</h3>
+            <p class="text-gray-400 text-sm">Her sorununuzla ilgilenen profesyonel ekip.</p>
         </div>
-        <div class="card-bg p-6 rounded-2xl border border-orange-500/20 hover:border-orange-500 transition-all text-center">
-            <h3 class="text-xl font-bold mb-2">Hilesiz Oyun</h3>
-            <p class="text-gray-400 text-sm">7/24 aktif yönetim ile hilesiz, adil bir ortam.</p>
+        <div class="bg-gray-900 p-8 rounded-2xl border border-orange-900 hover:border-orange-500 transition-all">
+            <h3 class="text-xl font-bold mb-3">Ekonomi</h3>
+            <p class="text-gray-400 text-sm">Dengeli pazar ve ticaret sistemi.</p>
+        </div>
+        <div class="bg-gray-900 p-8 rounded-2xl border border-orange-900 hover:border-orange-500 transition-all">
+            <h3 class="text-xl font-bold mb-3">7/24 Lag Yok</h3>
+            <p class="text-gray-400 text-sm">Yüksek performanslı özel sunucular.</p>
         </div>
     </section>
 
-    <div class="bg-gradient-to-r from-orange-600 to-red-600 p-1 rounded-2xl mb-12 shadow-[0_0_40px_rgba(234,88,12,0.3)]">
-        <div class="bg-black px-10 py-5 rounded-xl text-center">
-            <span class="block text-orange-500 text-xs font-black uppercase mb-1">Sunucuya Bağlan</span>
-            <span class="text-3xl font-mono tracking-widest">play.exonnetwork.com.tr</span>
+    <footer class="border-t border-gray-800 py-10 text-center">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="https://www.shopier.com/WienCraft" class="text-gray-400 hover:text-white">MAĞAZA</a>
+            <a href="https://discord.gg/wRr95fuwmf" class="text-gray-400 hover:text-white">DISCORD</a>
+            <a href="https://wa.me/639552110999" class="text-gray-400 hover:text-white">İLETİŞİM</a>
         </div>
-    </div>
-
-    <div class="flex flex-wrap justify-center gap-6">
-        <a href="https://www.shopier.com/WienCraft" target="_blank" class="bg-white text-black px-8 py-3 rounded-lg font-bold hover:bg-orange-500 hover:text-white transition-all">MAĞAZA</a>
-        <a href="https://discord.gg/wRr95fuwmf" target="_blank" class="bg-indigo-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-indigo-500 transition-all">DISCORD</a>
-        <a href="https://wa.me/639552110999" target="_blank" class="bg-transparent border border-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-black transition-all">İLETİŞİM</a>
-    </div>
-
-    <footer class="mt-20 text-gray-600 text-sm">
-        <p>© 2026 Exon SMP - Tüm Hakları Saklıdır.</p>
+        <p class="text-gray-600">© 2026 Exon SMP - Tüm Hakları Saklıdır.</p>
     </footer>
 
+    <script>
+        function copyIP() {
+            navigator.clipboard.writeText("play.exonnetwork.com.tr");
+            const text = document.getElementById("copyText");
+            text.style.opacity = "1";
+            setTimeout(() => { text.style.opacity = "0"; }, 2000);
+        }
+    </script>
 </body>
 </html>
