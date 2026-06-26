@@ -2,21 +2,26 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>Exon SMP</title>
+    <title>Exon SMP | Premium</title>
     <style>
         body { margin: 0; background: #ffffff; color: #333; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; }
         
-        /* En üstteki banner kalsın */
-        .banner-top { width: 100%; height: 350px; background: url('banner.png') center/cover; }
+        /* Üst Banner */
+        .banner-top { width: 100%; height: 350px; background: url('banner.png') center/cover; border-bottom: 2px solid #ddd; }
         
-        /* Beyaz alan */
-        .white-area { width: 100%; padding: 60px 0; display: flex; justify-content: center; }
+        /* Beyaz Ana Alan */
+        .content { max-width: 900px; width: 90%; padding: 60px 0; }
         
-        .grid { max-width: 800px; width: 90%; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        /* Kart Grid */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .card { padding: 20px; border: 1px solid #eee; border-radius: 20px; text-align: center; background: #fafafa; transition: 0.3s; }
+        .card:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
         
-        .card { padding: 20px; border: 1px solid #eee; border-radius: 15px; text-align: center; background: #f9f9f9; }
+        /* Exon Bilgi Bölümü */
+        .info-section { margin-top: 80px; padding: 40px; border-top: 2px solid #eee; text-align: center; }
         
-        .btn { display: block; background: #ea580c; color: white; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        .btn { display: block; background: #ea580c; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         .btn-dc { background: #5865F2; }
         .btn-wp { background: #25D366; }
     </style>
@@ -25,24 +30,34 @@
 
     <div class="banner-top"></div>
 
-    <div class="white-area">
+    <div class="content">
         <div class="grid">
             <div class="card">
                 <h3>SUNUCU IP</h3>
-                <p style="font-weight:bold; font-size:1.2rem;">play.exonnetwork.com.tr</p>
+                <div style="background:#eee; padding:15px; border-radius:8px; font-family:monospace;">play.exonnetwork.com.tr</div>
             </div>
             <div class="card">
-                <h3>MAĞAZA</h3>
-                <a href="https://www.shopier.com/WienCraft" class="btn">GİT</a>
+                <img src="logo2.png">
+                <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA</a>
             </div>
             <div class="card">
-                <h3>WHATSAPP</h3>
-                <a href="https://wa.me/639552110999" class="btn btn-wp">İLETİŞİM</a>
+                <img src="logo3.png">
+                <a href="https://wa.me/639552110999" class="btn btn-wp">WHATSAPP</a>
             </div>
             <div class="card">
-                <h3>DISCORD</h3>
-                <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">KATIL</a>
+                <img src="discordresmi.png">
+                <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD</a>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h2 style="color:#ea580c;">EXON SMP NEDİR?</h2>
+            <p style="line-height: 1.6; color: #666;">
+                Exon SMP, 2025 yılından bu yana oyunculara eşsiz bir survival deneyimi sunan, 
+                premium özelliklerle donatılmış bir topluluktur. Kaliteli altyapımız, 
+                adaletli yönetimimiz ve dost canlısı oyuncu kitlemizle 
+                Minecraft dünyasında kendi destanını yazman için seni bekliyoruz.
+            </p>
         </div>
     </div>
 
