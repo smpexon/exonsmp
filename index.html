@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exon SMP | Premium</title>
+    <title>Exon SMP | Hoşgeldin</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
         body { 
             margin: 0; background: #121212; color: #fff; font-family: sans-serif; 
             display: flex; justify-content: center; align-items: center; min-height: 100vh;
             animation: fadeIn 0.8s ease-out;
         }
         
-        /* Büyük ve yayvan tasarım */
+        /* Ana Kapsayıcı - Boyutları geniş ve heybetli */
         .grid-container { 
             display: grid; 
             grid-template-columns: 350px 700px; 
             gap: 30px; 
-            max-width: 1100px;
-            width: 95%;
+            max-width: 1100px; 
+            width: 95%; 
         }
         
         .bottom-row { 
@@ -29,17 +30,23 @@
             gap: 30px; 
         }
 
-        /* Kartlar (Daha büyük) */
+        /* Logo Kutusu - Logonun tam oturması için */
         .card-logo { background: #1e1e1e; padding: 25px; border-radius: 20px; display: flex; justify-content: center; align-items: center; }
-        .card-logo img { width: 100%; height: auto; }
+        .card-logo img { width: 100%; height: auto; object-fit: contain; }
         
-        /* IP Kutusu (sunucuadres.png eklendi) */
+        /* IP Kutusu - Görsel ve yazı stili */
         .ip-box { 
             background: #1e1e1e; padding: 25px; border-radius: 20px; text-align: center; 
-            display: flex; flex-direction: column; justify-content: center; cursor: pointer; 
+            display: flex; flex-direction: column; justify-content: center; cursor: pointer; transition: 0.3s;
         }
-        .ip-box img { width: 100%; max-width: 500px; margin: 0 auto; }
+        .ip-box:hover { border: 1px solid #ea580c; }
+        .ip-box img { width: 100%; max-width: 550px; margin: 0 auto; border-radius: 8px; }
+        .ip-text-final { 
+            margin-top: 15px; background: #ea580c; padding: 12px; border-radius: 10px; 
+            font-weight: bold; font-size: 1.2rem; display: inline-block; width: fit-content; margin-left: auto; margin-right: auto;
+        }
         
+        /* Alt Kartlar */
         .card { background: #1e1e1e; padding: 15px; border-radius: 20px; text-align: center; }
         .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 12px; }
         
@@ -56,8 +63,8 @@
         
         <!-- IP Kutusu (sunucuadres.png ile) -->
         <div class="ip-box" onclick="copyIP()">
-            <img src="sunucuadres.png" alt="Sunucu Adresi">
-            <p id="msg" style="margin-top: 15px; font-size: 0.9rem; opacity: 0.6;">Kopyalamak için tıkla</p>
+            <img src="image_6eb563.png" alt="Server Address">
+            <div class="ip-text-final" id="msg">play.exonnetwork.com.tr</div>
         </div>
 
         <!-- Alt Kartlar -->
@@ -81,9 +88,9 @@
         function copyIP() {
             navigator.clipboard.writeText("play.exonnetwork.com.tr");
             const msg = document.getElementById("msg");
-            msg.innerText = "IP BAŞARIYLA KOPYALANDI!";
-            msg.style.color = "#ea580c";
-            setTimeout(() => { msg.innerText = "Kopyalamak için tıkla"; msg.style.color = "#fff"; }, 2000);
+            const originalText = msg.innerText;
+            msg.innerText = "IP KOPYALANDI!";
+            setTimeout(() => { msg.innerText = originalText; }, 2000);
         }
     </script>
 </body>
