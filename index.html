@@ -14,12 +14,12 @@
             animation: fadeIn 0.8s ease-out;
         }
         
-        /* 2 Kat daha büyük grid yapısı */
+        /* Dengeli Grid Yapısı */
         .grid-container { 
             display: grid; 
-            grid-template-columns: 500px 900px; 
-            gap: 40px; 
-            max-width: 1500px; 
+            grid-template-columns: 400px 750px; 
+            gap: 30px; 
+            max-width: 1200px; 
             width: 95%; 
         }
         
@@ -27,31 +27,28 @@
             grid-column: span 2; 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
-            gap: 40px; 
+            gap: 30px; 
         }
 
-        /* Kart ve Logo Ayarları (Büyütüldü) */
-        .card-logo { background: #1e1e1e; padding: 40px; border-radius: 30px; display: flex; justify-content: center; align-items: center; }
+        .card-logo { background: #1e1e1e; padding: 30px; border-radius: 25px; display: flex; justify-content: center; align-items: center; }
         .card-logo img { width: 100%; height: auto; }
         
-        /* IP Kutusu (Büyütüldü) */
         .ip-box { 
-            background: #1e1e1e; padding: 40px; border-radius: 30px; text-align: center; 
+            background: #1e1e1e; padding: 30px; border-radius: 25px; text-align: center; 
             display: flex; flex-direction: column; justify-content: center; cursor: pointer; transition: 0.3s;
         }
-        .ip-box:hover { border: 2px solid #ea580c; }
-        .ip-box img { width: 100%; max-width: 700px; margin: 0 auto; border-radius: 15px; }
+        .ip-box:hover { border: 1.5px solid #ea580c; }
+        .ip-box img { width: 100%; max-width: 600px; margin: 0 auto; border-radius: 12px; }
         
         .ip-text-final { 
-            margin-top: 25px; background: #ea580c; padding: 20px; border-radius: 15px; 
-            font-weight: bold; font-size: 1.6rem; display: inline-block; width: fit-content; margin-left: auto; margin-right: auto;
+            margin-top: 20px; background: #ea580c; padding: 15px; border-radius: 12px; 
+            font-weight: bold; font-size: 1.3rem; display: inline-block; width: fit-content; margin-left: auto; margin-right: auto;
         }
         
-        /* Alt Kartlar (Büyütüldü) */
-        .card { background: #1e1e1e; padding: 25px; border-radius: 30px; text-align: center; }
-        .card img { width: 100%; height: 350px; object-fit: cover; border-radius: 20px; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 25px; text-align: center; }
+        .card img { width: 100%; height: 280px; object-fit: cover; border-radius: 15px; }
         
-        .btn { display: block; background: #ea580c; color: white; padding: 20px; border-radius: 15px; text-decoration: none; font-weight: bold; margin-top: 25px; font-size: 1.4rem; }
+        .btn { display: block; background: #ea580c; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 1.2rem; }
         .btn-dc { background: #5865F2; }
         .btn-wp { background: #25D366; }
     </style>
@@ -59,16 +56,13 @@
 <body>
 
     <div class="grid-container">
-        <!-- Logo -->
         <div class="card-logo"><img src="logo.png" alt="Logo"></div>
         
-        <!-- IP Kutusu -->
         <div class="ip-box" onclick="copyIP()">
             <img src="sunucuadres.png" alt="Server Address">
             <div class="ip-text-final" id="msg">play.exonnetwork.com.tr</div>
         </div>
 
-        <!-- Alt Kartlar -->
         <div class="bottom-row">
             <div class="card">
                 <img src="logo2.png">
