@@ -17,25 +17,29 @@
         .grid-container { display: grid; grid-template-columns: 400px 750px; gap: 30px; max-width: 1200px; width: 95%; }
         .bottom-row { grid-column: span 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 
-        /* LED IŞIK EFEKTLİ LOGO KUTUSU */
-        .card-logo { 
+        /* LOGO VE IP İÇİN ORTAK LED KUTU STİLİ */
+        .led-box { 
             background: #1e1e1e; padding: 30px; border-radius: 25px; 
             display: flex; justify-content: center; align-items: center;
-            /* LED IŞIK EFEKTİ */
-            box-shadow: 0 0 20px rgba(234, 88, 12, 0.3), inset 0 0 10px rgba(234, 88, 12, 0.1);
+            box-shadow: 0 0 20px rgba(234, 88, 12, 0.25);
+            transition: 0.3s;
         }
-        .card-logo img { width: 100%; height: auto; filter: drop-shadow(0 0 15px rgba(234, 88, 12, 0.5)); }
+
+        .card-logo img { width: 100%; height: auto; filter: drop-shadow(0 0 10px rgba(234, 88, 12, 0.4)); }
         
         .ip-box { 
             background: #1e1e1e; padding: 30px; border-radius: 25px; text-align: center; 
-            display: flex; flex-direction: column; justify-content: center; cursor: pointer; transition: 0.3s;
+            display: flex; flex-direction: column; justify-content: center; cursor: pointer;
+            box-shadow: 0 0 20px rgba(234, 88, 12, 0.25);
+            transition: 0.3s;
         }
-        .ip-box:hover { border: 1.5px solid #ea580c; }
+        .ip-box:hover { box-shadow: 0 0 30px rgba(234, 88, 12, 0.4); }
         .ip-box img { width: 100%; max-width: 600px; margin: 0 auto; border-radius: 12px; }
         
         .ip-text-final { 
             margin-top: 20px; background: #ea580c; padding: 15px; border-radius: 12px; 
-            font-weight: bold; font-size: 1.3rem; display: inline-block; width: fit-content; margin-left: auto; margin-right: auto;
+            font-weight: bold; font-size: 1.3rem; display: inline-block; width: fit-content; 
+            margin-left: auto; margin-right: auto; box-shadow: 0 0 15px rgba(234, 88, 12, 0.5);
         }
         
         .card { background: #1e1e1e; padding: 20px; border-radius: 25px; text-align: center; }
@@ -49,8 +53,7 @@
 <body>
 
     <div class="grid-container">
-        <!-- Logo LED efektli -->
-        <div class="card-logo"><img src="logo.png" alt="Logo"></div>
+        <div class="led-box card-logo"><img src="logo.png" alt="Logo"></div>
         
         <div class="ip-box" onclick="copyIP()">
             <img src="sunucuadres.png" alt="Server Address">
