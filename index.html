@@ -6,41 +6,21 @@
     <title>Exon SMP | Hoşgeldin</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
+        /* Metin seçimini ve kopyalamayı engelle */
+        body { -webkit-user-select: none; -ms-user-select: none; user-select: none; margin: 0; background: #121212; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; animation: fadeIn 0.8s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        body { 
-            margin: 0; background: #121212; color: #fff; font-family: sans-serif; 
-            display: flex; justify-content: center; align-items: center; min-height: 100vh;
-            animation: fadeIn 0.8s ease-out;
-        }
         
         .grid-container { display: grid; grid-template-columns: 400px 750px; gap: 30px; max-width: 1200px; width: 95%; }
         .bottom-row { grid-column: span 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-
-        /* LOGO VE IP İÇİN ORTAK LED KUTU STİLİ */
-        .led-box { 
-            background: #1e1e1e; padding: 30px; border-radius: 25px; 
-            display: flex; justify-content: center; align-items: center;
-            box-shadow: 0 0 20px rgba(234, 88, 12, 0.25);
-            transition: 0.3s;
-        }
-
+        
+        .led-box { background: #1e1e1e; padding: 30px; border-radius: 25px; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(234, 88, 12, 0.25); transition: 0.3s; }
         .card-logo img { width: 100%; height: auto; filter: drop-shadow(0 0 10px rgba(234, 88, 12, 0.4)); }
         
-        .ip-box { 
-            background: #1e1e1e; padding: 30px; border-radius: 25px; text-align: center; 
-            display: flex; flex-direction: column; justify-content: center; cursor: pointer;
-            box-shadow: 0 0 20px rgba(234, 88, 12, 0.25);
-            transition: 0.3s;
-        }
-        .ip-box:hover { box-shadow: 0 0 30px rgba(234, 88, 12, 0.4); }
+        .ip-box { background: #1e1e1e; padding: 30px; border-radius: 25px; text-align: center; display: flex; flex-direction: column; justify-content: center; cursor: pointer; box-shadow: 0 0 20px rgba(234, 88, 12, 0.25); transition: 0.3s; }
+        .ip-box:hover { box-shadow: 0 0 30px rgba(234, 88, 12, 0.4); border: 1.5px solid #ea580c; }
         .ip-box img { width: 100%; max-width: 600px; margin: 0 auto; border-radius: 12px; }
         
-        .ip-text-final { 
-            margin-top: 20px; background: #ea580c; padding: 15px; border-radius: 12px; 
-            font-weight: bold; font-size: 1.3rem; display: inline-block; width: fit-content; 
-            margin-left: auto; margin-right: auto; box-shadow: 0 0 15px rgba(234, 88, 12, 0.5);
-        }
+        .ip-text-final { margin-top: 20px; background: #ea580c; padding: 15px; border-radius: 12px; font-weight: bold; font-size: 1.3rem; display: inline-block; width: fit-content; margin-left: auto; margin-right: auto; box-shadow: 0 0 15px rgba(234, 88, 12, 0.5); }
         
         .card { background: #1e1e1e; padding: 20px; border-radius: 25px; text-align: center; }
         .card img { width: 100%; height: 280px; object-fit: cover; border-radius: 15px; }
@@ -50,16 +30,14 @@
         .btn-wp { background: #25D366; }
     </style>
 </head>
-<body>
+<body oncontextmenu="return false;">
 
     <div class="grid-container">
         <div class="led-box card-logo"><img src="logo.png" alt="Logo"></div>
-        
         <div class="ip-box" onclick="copyIP()">
             <img src="sunucuadres.png" alt="Server Address">
             <div class="ip-text-final" id="msg">play.exonnetwork.com.tr</div>
         </div>
-
         <div class="bottom-row">
             <div class="card">
                 <img src="logo2.png">
