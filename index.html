@@ -7,36 +7,39 @@
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
         body { 
             margin: 0; background: #121212; color: #fff; font-family: sans-serif; 
             display: flex; justify-content: center; align-items: center; min-height: 100vh;
             animation: fadeIn 0.8s ease-out;
         }
         
-        .container { 
-            display: grid; grid-template-columns: repeat(3, 300px); gap: 20px; 
-            max-width: 960px; width: 95%;
+        /* 3 Sütunlu Yapı */
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: 240px 480px; /* Logo ve IP için genişlikler */
+            gap: 20px; 
+            max-width: 760px;
         }
         
-        /* Logo Kutusu - Logonun tam oturması için */
-        .card-logo { 
-            background: #1e1e1e; padding: 10px; border-radius: 12px; 
-            display: flex; justify-content: center; align-items: center;
+        /* Alt Kartlar için Sütun */
+        .bottom-row { 
+            grid-column: span 2; 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
         }
-        .card-logo img { width: 90%; height: auto; object-fit: contain; }
+
+        /* Logo Kutusu */
+        .card-logo { background: #1e1e1e; padding: 15px; border-radius: 12px; display: flex; justify-content: center; align-items: center; }
+        .card-logo img { width: 100%; height: auto; object-fit: contain; }
         
         /* IP Kutusu */
-        .ip-box { 
-            grid-column: span 2; background: #1e1e1e; border-radius: 12px; 
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-        }
+        .ip-box { background: #1e1e1e; padding: 20px; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; cursor: pointer; }
         
-        /* Alt Kartlar */
+        /* Kartlar */
         .card { background: #1e1e1e; padding: 10px; border-radius: 12px; text-align: center; }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
+        .card img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; }
         
-        /* Butonlar */
         .btn { display: block; background: #ea580c; color: white; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         .btn-dc { background: #5865F2; }
         .btn-wp { background: #25D366; }
@@ -44,29 +47,29 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- Logo -->
+    <div class="grid-container">
+        <!-- Logo ve IP -->
         <div class="card-logo"><img src="logo.png" alt="Logo"></div>
-        
-        <!-- IP Kutusu -->
         <div class="ip-box" onclick="copyIP()">
-            <h3 style="margin: 0; font-size: 0.9rem; color: #ccc;">SUNUCU ADRESİ</h3>
-            <div id="ipText" style="font-size: 1.4rem; color: #ea580c; font-weight: bold; margin: 5px 0;">play.exonnetwork.com.tr</div>
-            <p id="msg" style="margin: 0; font-size: 0.7rem; opacity: 0.6;">Kopyalamak için tıkla</p>
+            <h3 style="margin:0; font-size: 0.9rem; color: #ccc;">SUNUCU ADRESİ</h3>
+            <div id="ipText" style="font-size: 1.5rem; color: #ea580c; font-weight: bold; margin: 5px 0;">play.exonnetwork.com.tr</div>
+            <p id="msg" style="margin:0; font-size: 0.7rem; opacity: 0.6;">Kopyalamak için tıkla</p>
         </div>
 
-        <!-- Kartlar -->
-        <div class="card">
-            <img src="logo2.png">
-            <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA PANELİ</a>
-        </div>
-        <div class="card">
-            <img src="logo3.png">
-            <a href="https://wa.me/639552110999" class="btn btn-wp">WHATSAPP İLETİŞİM</a>
-        </div>
-        <div class="card">
-            <img src="discordresmi.png">
-            <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD KATIL</a>
+        <!-- Alt Kartlar -->
+        <div class="bottom-row">
+            <div class="card">
+                <img src="logo2.png">
+                <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA PANELİ</a>
+            </div>
+            <div class="card">
+                <img src="logo3.png">
+                <a href="https://wa.me/639552110999" class="btn btn-wp">WHATSAPP İLETİŞİM</a>
+            </div>
+            <div class="card">
+                <img src="discordresmi.png">
+                <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD KATIL</a>
+            </div>
         </div>
     </div>
 
