@@ -6,7 +6,6 @@
     <title>Exon SMP | Hoşgeldin</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
-        /* Metin seçimini ve kopyalamayı engelle */
         body { -webkit-user-select: none; -ms-user-select: none; user-select: none; margin: 0; background: #121212; color: #fff; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; animation: fadeIn 0.8s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
@@ -14,20 +13,25 @@
         .bottom-row { grid-column: span 2; display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
         
         .led-box { background: #1e1e1e; padding: 30px; border-radius: 25px; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px rgba(234, 88, 12, 0.25); transition: 0.3s; }
+        .led-box:hover { transform: scale(1.02); }
         .card-logo img { width: 100%; height: auto; filter: drop-shadow(0 0 10px rgba(234, 88, 12, 0.4)); }
         
         .ip-box { background: #1e1e1e; padding: 30px; border-radius: 25px; text-align: center; display: flex; flex-direction: column; justify-content: center; cursor: pointer; box-shadow: 0 0 20px rgba(234, 88, 12, 0.25); transition: 0.3s; }
-        .ip-box:hover { box-shadow: 0 0 30px rgba(234, 88, 12, 0.4); border: 1.5px solid #ea580c; }
+        .ip-box:hover { box-shadow: 0 0 30px rgba(234, 88, 12, 0.4); border: 1.5px solid #ea580c; transform: scale(1.01); }
         .ip-box img { width: 100%; max-width: 600px; margin: 0 auto; border-radius: 12px; }
         
         .ip-text-final { margin-top: 20px; background: #ea580c; padding: 15px; border-radius: 12px; font-weight: bold; font-size: 1.3rem; display: inline-block; width: fit-content; margin-left: auto; margin-right: auto; box-shadow: 0 0 15px rgba(234, 88, 12, 0.5); }
         
-        .card { background: #1e1e1e; padding: 20px; border-radius: 25px; text-align: center; }
+        .card { background: #1e1e1e; padding: 20px; border-radius: 25px; text-align: center; transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
         .card img { width: 100%; height: 280px; object-fit: cover; border-radius: 15px; }
         
-        .btn { display: block; background: #ea580c; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 1.2rem; }
+        .btn { display: block; background: #ea580c; color: white; padding: 18px; border-radius: 12px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 1.2rem; transition: 0.3s; }
+        .btn:hover { background: #c2410c; }
         .btn-dc { background: #5865F2; }
+        .btn-dc:hover { background: #4752C4; }
         .btn-wp { background: #25D366; }
+        .btn-wp:hover { background: #128C7E; }
     </style>
 </head>
 <body oncontextmenu="return false;">
@@ -48,7 +52,7 @@
                 <a href="https://wa.me/639552110999" class="btn btn-wp">WHATSAPP İLETİŞİM</a>
             </div>
             <div class="card">
-                <img src="discordresmi.png">
+                <img src="discord.png"> <!-- discord.png buraya eklendi -->
                 <a href="https://discord.gg/wRr95fuwmf" class="btn btn-dc">DISCORD KATIL</a>
             </div>
         </div>
