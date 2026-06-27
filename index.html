@@ -6,58 +6,38 @@
     <title>Exon SMP | Premium</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
-        /* Animasyon: Sayfa açılış efekti */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         body { 
-            margin: 0; 
-            background: #121212; 
-            color: #fff; 
-            font-family: 'Segoe UI', sans-serif; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 50px 20px;
-            animation: fadeIn 1s ease-out;
+            margin: 0; background: #121212; color: #fff; font-family: sans-serif; 
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
+            animation: fadeIn 0.8s ease-out;
         }
         
         .container { 
-            display: grid; 
-            grid-template-columns: repeat(3, 300px); 
-            gap: 20px; 
-            max-width: 960px; 
-            width: 100%;
+            display: grid; grid-template-columns: repeat(3, 300px); gap: 20px; 
+            max-width: 960px; width: 95%;
         }
         
-        /* Kart Tasarımları */
-        .card { 
-            background: #1e1e1e; 
-            padding: 15px; 
-            border-radius: 15px; 
-            text-align: center; 
-            border: 1px solid #333; 
-            transition: 0.3s;
+        /* Logo Kutusu - Logonun tam oturması için */
+        .card-logo { 
+            background: #1e1e1e; padding: 10px; border-radius: 12px; 
+            display: flex; justify-content: center; align-items: center;
         }
-        .card:hover { transform: translateY(-5px); border-color: #555; }
-        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; }
+        .card-logo img { width: 90%; height: auto; object-fit: contain; }
         
-        /* IP Kutusu (2 sütun kaplar) */
+        /* IP Kutusu */
         .ip-box { 
-            grid-column: span 2; 
-            background: #1e1e1e; 
-            padding: 20px; 
-            border-radius: 15px; 
-            border: 1px solid #333; 
-            text-align: center; 
-            cursor: pointer;
+            grid-column: span 2; background: #1e1e1e; border-radius: 12px; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
         }
-        .ip-text { font-family: monospace; font-size: 1.8rem; color: #ea580c; margin-top: 10px; font-weight: bold; }
+        
+        /* Alt Kartlar */
+        .card { background: #1e1e1e; padding: 10px; border-radius: 12px; text-align: center; }
+        .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; }
         
         /* Butonlar */
-        .btn { display: block; background: #ea580c; color: white; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        .btn { display: block; background: #ea580c; color: white; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         .btn-dc { background: #5865F2; }
         .btn-wp { background: #25D366; }
     </style>
@@ -65,14 +45,17 @@
 <body>
 
     <div class="container">
-        <div class="card"><img src="logo.png"></div>
+        <!-- Logo -->
+        <div class="card-logo"><img src="logo.png" alt="Logo"></div>
         
-        <div class="ip-box" onclick="copyIP()" id="ipBox">
-            <h3>SUNUCU ADRESİ</h3>
-            <div class="ip-text" id="ipText">play.exonnetwork.com.tr</div>
-            <p id="msg" style="font-size: 0.8rem; opacity: 0.6; margin-top: 5px;">Kopyalamak için tıkla</p>
+        <!-- IP Kutusu -->
+        <div class="ip-box" onclick="copyIP()">
+            <h3 style="margin: 0; font-size: 0.9rem; color: #ccc;">SUNUCU ADRESİ</h3>
+            <div id="ipText" style="font-size: 1.4rem; color: #ea580c; font-weight: bold; margin: 5px 0;">play.exonnetwork.com.tr</div>
+            <p id="msg" style="margin: 0; font-size: 0.7rem; opacity: 0.6;">Kopyalamak için tıkla</p>
         </div>
 
+        <!-- Kartlar -->
         <div class="card">
             <img src="logo2.png">
             <a href="https://www.shopier.com/WienCraft" class="btn">MAĞAZA PANELİ</a>
@@ -91,9 +74,8 @@
         function copyIP() {
             navigator.clipboard.writeText("play.exonnetwork.com.tr");
             const msg = document.getElementById("msg");
-            msg.innerText = "IP KOPYALANDI!";
-            msg.style.color = "#ea580c";
-            setTimeout(() => { msg.innerText = "Kopyalamak için tıkla"; msg.style.color = "#fff"; }, 2000);
+            msg.innerText = "KOPYALANDI!";
+            setTimeout(() => { msg.innerText = "Kopyalamak için tıkla"; }, 2000);
         }
     </script>
 </body>
